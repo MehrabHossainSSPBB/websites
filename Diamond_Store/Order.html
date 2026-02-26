@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SSPBB Diamond Store</title>
+    </head>
+    <body bgcolor="#bfffff" style="font-family: Arial">
+        <h1 align="center">Order</h1>
+        <form action="End.html">
+            <b>Your details:</b>
+            </br>Name:</br><input style="width: 300px;" type="text" placeholder="Enter your name." required>
+            </br>Address:
+            </br><input style="width: 300px;" type="text" placeholder="Enter your address." required>
+            </br>Phone:
+            </br><input style="width: 300px;" type="tel" placeholder="Enter your phone number. (Bangladesh)" pattern="[0]{1}[1]{1}[3,6,7,8,9]{1}[0-9]{8}" required>
+            </br>Email:
+            </br><input style="width: 300px;" type="email" placeholder="Enter your email id." required>
+            </br>
+            </br><b>Product details:</b>
+            </br>Colour:
+            </br>
+                <select style="width: 300px;">
+                    <option>Red</option>
+                    <option>Blue</option>
+                    <option>Green</option>
+                </select>
+            </br>Weigth of 1 piece:
+            </br>
+                <select style="width: 300px;" onchange="out2.value=this.value;cal1()" id="i1">
+                    <option value="1">1 gm</option>
+                    <option value="2">2 gm</option>
+                    <option value="5">5 gm</option>
+                    <option value="10">10 gm</option>
+                    <option value="20">20 gm</option>
+                    <option value="50">50 gm</option>
+                    <option value="100">100 gm</option>
+                </select>
+            </br>Quantity:
+                <table border="0" style="width:300px">
+                    <tr>
+                        <td>
+                            <input style="width: 223px;" type="range" id="i2" min="1" max="10" step="1" value="1" onchange="out1.value=this.value;out3.value=this.value;cal1()" required>
+                        </td>
+                        <td align="right">
+                            <output name="out1">1</output> piece
+                        </td>
+                    </tr>
+                </table>
+            Payment Method:
+            </br>
+                <select style="width: 300px;">
+                    <option>Bkash</option>
+                    <option>Rocket</option>
+                    <option>Nagad</option>
+                    <option>Cash on Delivery</option>
+                </select>
+            </br>
+            </br><b>Agreement:</b> You can cancel the order befor shipping. You can also cancel the order after shipping by paying the shipping fee only. But you can't return the order if it is delivered. If you have selected online payment method, you have 3 days to pay after delivery. But, if you selected 'cash on delivery', You have to pay to the delivery man at he time of delivery. If you do not pay in time, We will take efective step.
+            </br>
+            </br><input type="checkbox" required> I accept the agreement.
+            </br>
+            </br><b>Price:</b>
+                <table border="0" width="300px">
+                    <tr>   
+                        <td>
+                            Price of 1 gm:
+                            </br>Weigth:
+                            </br><font color="red">Price of 1 piece:</font>
+                            </br>Quantity:
+                            </br><font color="blue">Sub-total:</font>
+                            </br>Shipping fee:
+                            </br><font color="#15b015">Total:</font>
+                        </td>
+                        <td align="right">
+                            500000 taka
+                            </br><output name="out2">1</output> gm
+                            </br><font color="red"><span id="i3">500000</span> taka</font>
+                            </br><output name="out3">1</output> piece
+                            </br><font color="blue"><span id="i4">500000</span> taka</font>
+                            </br>1000 taka
+                            </br><font color="#15b015"><span id="i5">501000</span> taka</font>
+                        </td>
+                    </tr>
+                </table>
+            </br><input style="width: 100px;height: 30px; background-color: rgb(255, 145, 0);font-size:16px; color: white" type="submit" value="Order">
+        </form>
+        <br>
+        <div align="center">
+            <a href="index.html"><button style="background-color:limegreen;font-size:20px;width: 200px;height: 40px; color:white;margin-bottom:4px">Back to Home</button></a>
+            <a href="About.html"><button style="background-color:limegreen;font-size:20px;width: 200px;height: 40px;color:white;margin-bottom:4px">About</button></a>
+        </div>
+        </br><b><marquee style="color: red; font-size:20px;">! Just made for learning coding. Don't take seriously.</marquee></b>
+        <div align="center">
+            <a href="../">
+                <button class="butM">All websites of SSPBB</button>
+            </a>
+        </div>
+    </body>
+    <link rel="stylesheet" href="DS.css">
+    <script>
+        function cal1()
+        {
+            i1 = document.getElementById('i1').value;
+            i2 = document.getElementById('i2').value;
+            document.getElementById('i3').innerHTML = i1*500000;
+            document.getElementById('i4').innerHTML = i1*i2*500000;
+            document.getElementById('i5').innerHTML = i1*i2*500000+1000;
+        }
+    </script>
+</html>
